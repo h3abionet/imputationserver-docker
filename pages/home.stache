@@ -1,16 +1,16 @@
 <div class="jumbotron jumbotron-fluid text-white text-center" style="background: #4f5d73; margin-bottom: 0px; ">
 	<div class="container">
-		<h1 class="jumbotron-heading">H3Africa Imputation Server</h1>
+		<h1 class="jumbotron-heading">Michigan Imputation Server</h1>
 		<p class="lead text-center">
 			Free Next-Generation Genotype Imputation Service
 		</p>
-		{{#is(loggedIn, false)}}
+		<% if(!loggedIn) {%>
 			<p>
 				<br>
 				<a class="btn btn-lg btn-success" href="/#!pages/register">Sign up now</a>&nbsp;
 				<a class="btn btn-lg btn-outline-light" href="/#!pages/login">Login</a>
 			</p>
-		{{/is}}
+			<% } %>
 
 	</div>
 </div>
@@ -30,11 +30,11 @@
 					<span class="lead" style="font-size: 200%;"><%= Math.round(counter.attr('users')).toLocaleString() %></span><br>Registerd Users
 				</p>
 			</div>
-			{{! <div class="col-md-3 text-center">
+			<div class="col-md-3 text-center">
 				<p>
 					<span class="lead" style="font-size: 200%;">> 100</span><br>Published GWAS
 				</p>
-			</div> }}
+			</div>
 		</div>
 	</div>
 </div>
@@ -50,12 +50,7 @@
 						<div class="col-md-8">
 							<h5 style="padding-top: 10px; padding-bottom: 0px; margin-bottom: 10px;">Latest News</h5>
 							<hr style="padding-top: 0px; margin-top: 0px;">
-							 <p>
-                                                                <small class="text-muted"><i class="far fa-calendar-alt"></i> 27 November 2018</small><br>
-                                                                Redesigned user interface to improve user experience.
-                                                        </p>
-
-                                                        <p>
+							<p>
 								<small class="text-muted"><i class="far fa-calendar-alt"></i> 27 June 2017</small><br>
 								Updated pipeline to v1.0.2. Release notes can be found <a href="https://github.com/genepi/imputationserver/releases/tag/1.0.2" target="_blank">here</a>.
 							</p>
@@ -85,9 +80,7 @@
 						<div class="col-md-4">
 
 							<a class="twitter-timeline" href="https://twitter.com/umimpute" data-widget-id="593759360838414337">Tweets by @umimpute</a>
-							<script>
-							!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-							</script>
+							<% !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs"); %>
 
 
 						</div>
@@ -134,7 +127,7 @@
 <div class="py-5 bg-light">
 	<div class="container">
 
-		<h2 class="text-center pb-5 ">Wide-range of reference panels supported</h2>
+		<h2 class="text-center pb-5 ">Up to date and <b><u>accurate</u></b> reference panels</h2>
 
 		<div class="card-deck  text-center ">
 			<div class="card " style="border-top-color: #76c2af; border-top-width: 5px;">
@@ -163,7 +156,7 @@
 			<div class="card " style="border-top-color: #4f5d73; border-top-width: 5px;">
 				<div class="card-body">
 
-					CAPPA<br>African American
+					CAAPA<br>African American
 
 				</div>
 			</div>
@@ -213,7 +206,7 @@
 						<img src="/static/images/control.png" style="width: 105px;">
 					</p>
 
-					You have <b>full control</b> about the service. <a href="mailto:cfuchsb@umich.edu"> Write us</a> to get more information.
+					{{! You have <b>full control</b> about the service. <a href="mailto:cfuchsb@umich.edu"> Write us</a> to get more information. }}
 
 				</div>
 			</div>
