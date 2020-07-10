@@ -22,7 +22,7 @@ ADD pages /opt/cloudgene/sample/pages
 ADD apps.yaml /opt/cloudgene/apps.yaml
 
 # Imputation Server Branding
-ENV CLOUDGENE_SERVICE_NAME="Michigan Imputation Server"
+ENV CLOUDGENE_SERVICE_NAME="H3Africa Imputation Server"
 ENV CLOUDGENE_HELP_PAGE="http://imputationserver.readthedocs.io"
 ENV CLOUDGENE_REPOSITORY="/opt/cloudgene/apps.yaml"
 
