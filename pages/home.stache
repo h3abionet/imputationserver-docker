@@ -134,12 +134,17 @@
 		<div class="card-deck text-center ">
 			<div class="card box-shadow" style="height: 130px;">
 				<div class="card-body">
-					<p><img src="/static/images/h3abionet.jpeg" width="auto" height="90px"></p>
+					<p><img src="/static/images/h3abionet.jpeg" width="auto" height="80px"></p>
 				</div>
 			</div>
 			<div class="card box-shadow" style="height: 130px;">
 				<div class="card-body">
-					<p><img src="/static/images/h3abionet.jpeg" width="auto" height="90px"></p>
+					<p><img src="/static/images/h3africa.png" width="auto" height="70px"></p>
+				</div>
+			</div>
+			<div class="card box-shadow" style="height: 130px;">
+				<div class="card-body">
+					<p><img src="/static/images/ilifu.png" width="auto" height="70px"></p>
 				</div>
 			</div>
 		</div>
