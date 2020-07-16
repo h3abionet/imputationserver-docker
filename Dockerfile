@@ -1,4 +1,4 @@
-FROM genepi/cloudgene:v2.3.5
+FROM genepi/cloudgene:v2.3.3
 
 MAINTAINER Sebastian Schoenherr <sebastian.schoenherr@i-med.ac.at>, Lukas Forer <lukas.forer@i-med.ac.at>
 
@@ -6,7 +6,7 @@ MAINTAINER Sebastian Schoenherr <sebastian.schoenherr@i-med.ac.at>, Lukas Forer 
 RUN apt update && \
 apt -y install \
 libxml2-dev \
-libcurl4-openssl-dev && \
+libcurl4-openssl-dev r-base && \
 apt-get clean && \
 rm -rf /var/lib/apt/lists/*
 
