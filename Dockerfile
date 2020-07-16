@@ -2,18 +2,34 @@ FROM genepi/cloudgene:v2.3.3
 
 MAINTAINER Sebastian Schoenherr <sebastian.schoenherr@i-med.ac.at>, Lukas Forer <lukas.forer@i-med.ac.at>
 
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
+ENV PATH /opt/conda/bin:$PATH
+
 # Install dependencies for R packages
 RUN apt update && \
 apt -y install \
 libxml2-dev \
-libcurl4-openssl-dev r-base && \
+libcurl4-openssl-dev && \
 apt-get clean && \
 rm -rf /var/lib/apt/lists/*
 
-# Install R Packages
-RUN R -e "install.packages('RColorBrewer', repos = 'http://cran.rstudio.com' )"
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
+    /bin/bash ~/miniconda.sh -b -p /opt/conda && \
+    rm ~/miniconda.sh && \
+    echo "conda activate base" >> ~/.bashrc
 
-RUN R -e "source('https://bioconductor.org/biocLite.R' )" -e 'biocLite("geneplotter")'
+# Install R Packages
+RUN conda update conda && \
+    conda clean --all --yes && \
+    conda install -y -c r r-rcolorbrewer
+
+RUN conda update conda && \
+    conda clean --all --yes && \
+    conda install -y -c bioconda bioconductor-geneplotter
+
+# RUN R -e "install.packages('RColorBrewer', repos = 'http://cran.rstudio.com' )"
+
+# RUN R -e "source('https://bioconductor.org/biocLite.R' )" -e 'biocLite("geneplotter")'
 
 # Add imputationserver specific pages
 ADD pages /opt/cloudgene/sample/pages
