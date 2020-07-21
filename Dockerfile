@@ -26,7 +26,7 @@ RUN conda update conda && \
 
 RUN conda update conda && \
     conda clean --all --yes && \
-    conda install -y bioconductor-geneplotter bioconda nextflow r-rcolorbrewer r-knitr r-markdown r-ggplot2 r-data.table r-rmarkdown
+    conda install -y bioconductor-geneplotter nextflow r-rcolorbrewer r-knitr r-markdown r-ggplot2 r-data.table r-rmarkdown
 
 # RUN R -e "install.packages('RColorBrewer', repos = 'http://cran.rstudio.com' )"
 
