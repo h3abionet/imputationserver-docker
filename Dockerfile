@@ -21,7 +21,8 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86
 # Install R Packages
 RUN conda update conda && \
     conda clean --all --yes && \
-    conda config --add channels bioconda r
+    conda config --add channels bioconda && \
+    conda config --add channels r
 
 RUN conda update conda && \
     conda clean --all --yes && \
