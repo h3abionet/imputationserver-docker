@@ -1,5 +1,8 @@
 id: imputationserver
 url: https://github.com/genepi/imputationserver/releases/download/v1.4.2/imputationserver.zip
 ---
-id: hapmap2
-url: https://imputationserver.sph.umich.edu/static/downloads/releases/hapmap2-2.0.0.zip
+id: test
+url: /data/apps/test.zip
+---
+id: h3ar3b
+url: /data/apps/h3ar3b.zip
