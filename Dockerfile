@@ -21,15 +21,11 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86
 # Install R Packages
 RUN conda update conda && \
     conda clean --all --yes && \
-    conda install -y -c bioconda bioconductor-geneplotter
+    conda config --add channels bioconda r
 
 RUN conda update conda && \
     conda clean --all --yes && \
-    conda install -y -c bioconda nextflow
-
-RUN conda update conda && \
-    conda clean --all --yes && \
-    conda install -y -c r r-rcolorbrewer r-knitr r-markdown r-ggplot2 r-data.table r-rmarkdown
+    conda install -y bioconductor-geneplotter bioconda nextflow r-rcolorbrewer r-knitr r-markdown r-ggplot2 r-data.table r-rmarkdown
 
 # RUN R -e "install.packages('RColorBrewer', repos = 'http://cran.rstudio.com' )"
 
