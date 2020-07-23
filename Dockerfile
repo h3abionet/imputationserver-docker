@@ -28,6 +28,10 @@ RUN conda update conda && \
     conda clean --all --yes && \
     conda install -y bioconductor-geneplotter nextflow r-rcolorbrewer r-knitr r-markdown r-ggplot2 r-data.table r-rmarkdown r-kernsmooth
 
+RUN conda update conda && \
+    conda clean --all --yes && \
+    conda install -y mysql
+
 # RUN R -e "install.packages('RColorBrewer', repos = 'http://cran.rstudio.com' )"
 
 # RUN R -e "source('https://bioconductor.org/biocLite.R' )" -e 'biocLite("geneplotter")'
